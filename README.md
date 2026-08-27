@@ -30,7 +30,7 @@ The complete operating system, guardrails, rules, and initiative tracking enviro
 ### Method 1: Use with Any New / Existing Project (1-Line CLI)
 Navigate to your new project and run:
 ```bash
-/path/to/Cellary/templates/agentic-starter-kit/scripts/init-project.sh .
+/path/to/agentic-starter-kit/scripts/init-project.sh .
 ```
 
 ### Method 2: Create a GitHub Template Repository
