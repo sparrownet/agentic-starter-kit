@@ -26,3 +26,10 @@
    - Make small atomic conventional commits with co-located unit tests.
    - Run tests and static builds before opening PRs.
    - Request user approval before merging into `main`.
+
+---
+
+## 4. Mandatory Secret & Sensitive Data Guardrail
+1. **Zero Secret Leakage:** NEVER read, output, log, or commit secrets, private tokens, API keys, credentials, or `.env` files into markdown documentation (`PRD.md`, `EXECUTION_PLAN.md`), conversation text, terminal commands, or Git commit messages.
+2. **Sanitized Output Policy:** If debugging or displaying configuration files, always mask, redact, or replace private values with placeholders (e.g., `sk-proj-***` or `YOUR_API_KEY_HERE`).
+3. **Restricted Credential Actions:** Never run exfiltration commands, curl commands sending host environment variables to external endpoints, or scripts that dump memory/environment secrets.

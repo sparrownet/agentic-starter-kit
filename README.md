@@ -7,6 +7,7 @@
 [![Google Antigravity Ready](https://img.shields.io/badge/Google%20Antigravity-Ready-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google)
 [![Agentic SDLC Protocol](https://img.shields.io/badge/Agentic%20SDLC-Protocol%20v1.0-6366F1?style=for-the-badge&logo=codewars&logoColor=white)](#-the-agentic-sdlc-lifecycle)
 [![Zero Dependency Drift](https://img.shields.io/badge/Zero--Drift-Strict%20Guardrails-EC4899?style=for-the-badge)](#-core-guardrails-enforced)
+[![Security Hardened](https://img.shields.io/badge/Security-Secret%20Safety-059669?style=for-the-badge&logo=shieldsdotio&logoColor=white)](#-security--governance)
 [![Git Workflow](https://img.shields.io/badge/Git%20Workflow-Initiative%20Branches-8B5CF6?style=for-the-badge&logo=git&logoColor=white)](#-core-guardrails-enforced)
 [![License: MIT](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
 
@@ -17,6 +18,7 @@
 [Repository Structure](#-repository-structure) •
 [Quickstart](#-quickstart--installation) •
 [Enforced Guardrails](#-core-guardrails-enforced) •
+[Security & Governance](#-security--governance) •
 [Subagents](#-subagent-orchestration-matrix)
 
 </div>
@@ -34,11 +36,12 @@ The **Agentic SDLC Starter Kit** provides a battle-tested operational framework 
 ## ✨ Key Features
 
 - 🛡️ **Mandatory Transparency First:** The agent must explain its intent, rationale, and target files before executing terminal commands or modifying code.
+- 🔒 **Zero Secret Leakage:** Strict policy forbidding credentials, private tokens, API keys, and `.env` data from being committed, logged, or written to markdown plans.
 - 📦 **Zero-Drift Dependency Policy:** No `npm install`, `pip install`, or system packages are installed autonomously. All external additions require explicit trade-off justification and user approval.
 - 📋 **Dual-Blueprint Planning (PRD + Execution Plan):** Every initiative is tracked in a central dashboard (`docs/INITIATIVES.md`) and requires both a Product Requirements Document (`PRD.md`) and a step-by-step Technical Execution Plan (`EXECUTION_PLAN.md`).
 - 🌿 **Disciplined Git Initiative Branching:** Work is isolated in dedicated long-lived initiative branches (`feature/initiative-xx-...`) with atomic Conventional Commits and co-located unit tests.
 - 🤖 **Specialist Subagent Delegation:** Out-of-the-box delegation patterns for Backend/Core, Frontend/UI, Architectural Review, and QA Verification agents.
-- ⚡ **1-Command Zero-Friction Setup:** Scaffold any new or existing repository in seconds using the automated initializer.
+- ⚡ **1-Command Zero-Friction Setup:** Scaffold any new or existing repository with safe, non-destructive installer backups.
 
 ---
 
@@ -65,6 +68,8 @@ flowchart TD
 
 ```
 .
+├── .github/
+│   └── CODEOWNERS                     # Protects agent instructions from PR tampering
 ├── AGENTS.md                          # Global operating rules & transparency directives
 ├── .agents/
 │   └── rules/
@@ -80,7 +85,7 @@ flowchart TD
 │   └── agentic-sdlc/
 │       └── SKILL.md                   # Antigravity skill definition for SDLC automation
 └── scripts/
-    └── init-project.sh                # 1-command installer script for projects
+    └── init-project.sh                # Non-destructive 1-command installer with backups
 ```
 
 ---
@@ -89,17 +94,19 @@ flowchart TD
 
 ### Option 1: Apply to an Existing Project (Recommended)
 
-From your target project repository, run the installer script:
+Run the installer script pointing to your target workspace:
 
 ```bash
+# If cloned locally:
 /path/to/agentic-starter-kit/scripts/init-project.sh .
+
+# Or inspect & run directly:
+git clone https://github.com/sparrownet/agentic-starter-kit.git /tmp/agentic-starter-kit
+/tmp/agentic-starter-kit/scripts/init-project.sh .
+rm -rf /tmp/agentic-starter-kit
 ```
 
-Or via `curl`:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/sparrownet/agentic-starter-kit/main/scripts/init-project.sh | bash -s -- .
-```
+> **Note:** The installer is **non-destructive**. If existing configuration files exist in your target directory, it automatically creates timestamped `.bak` backups before updating.
 
 ### Option 2: Create a New Repository from Template
 
@@ -125,10 +132,22 @@ cp -r skills/agentic-sdlc ~/.gemini/antigravity-cli/skills/
 | Rule | File | Enforcement & Guarantee |
 | :--- | :--- | :--- |
 | **Transparency First** | [`AGENTS.md`](./AGENTS.md) | Agent MUST explain intent, reasoning, and target files before executing commands or editing files. |
+| **Secret & Data Safety** | [`AGENTS.md`](./AGENTS.md) | Zero secret leakage. Credentials, `.env` values, and private tokens must NEVER be committed, logged, or recorded in docs. |
 | **No Rogue Installs** | [`AGENTS.md`](./AGENTS.md) | Native-first policy. External dependencies (`npm`, `pip`, etc.) require trade-off justification & user sign-off. |
 | **Initiative Tracking** | [`.agents/rules/initiative_tracking.md`](./.agents/rules/initiative_tracking.md) | Live sync with `docs/INITIATIVES.md` + dual `PRD.md` & `EXECUTION_PLAN.md` creation before code is written. |
 | **Branch & PR Protocol** | [`.agents/rules/git_branch_pr_workflow.md`](./.agents/rules/git_branch_pr_workflow.md) | Long-lived `feature/initiative-xx-...` branches, atomic Conventional Commits, co-located tests, explicit merge approval. |
 | **Subagent Delegation** | [`.agents/rules/subagent_delegation.md`](./.agents/rules/subagent_delegation.md) | Delegating complex phases to specialized subagents for clean context and parallel development. |
+
+---
+
+## 🔒 Security & Governance
+
+This starter kit incorporates defense-in-depth measures for AI agent interactions:
+
+1. **Anti-Leakage Protocol:** Directives in [`AGENTS.md`](./AGENTS.md) mandate credential masking and prevent accidental exfiltration of private keys, environment variables, or database connection strings.
+2. **Rule Integrity Protection:** The included [`.github/CODEOWNERS`](./.github/CODEOWNERS) ensures that PRs modifying `.agents/` or `AGENTS.md` cannot be merged without explicit review from authorized security maintainers, neutralizing indirect prompt-injection vectors.
+3. **Safe, Non-Destructive Installer:** `scripts/init-project.sh` uses strict error handling (`set -euo pipefail`) and creates timestamped backups of modified files to prevent data loss.
+4. **Supply-Chain Guard:** Autonomous package installations are blocked by default, protecting development environments against dependency confusion and typo-squatted malicious packages.
 
 ---
 

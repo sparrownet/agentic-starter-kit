@@ -1,0 +1,11 @@
+# CODEOWNERS — Protect Agent Guardrails and SDLC Governance
+# Any PR modifying agent instructions or SDLC rules requires review from code owners.
+
+# Global owner fallback
+*       @your-org/core-maintainers
+
+# Mandatory Agent Directives & Rules Security Boundary
+/AGENTS.md              @your-org/security-reviewers @your-org/core-maintainers
+/.agents/               @your-org/security-reviewers @your-org/core-maintainers
+/.agents/rules/         @your-org/security-reviewers @your-org/core-maintainers
+/skills/                @your-org/security-reviewers @your-org/core-maintainers
