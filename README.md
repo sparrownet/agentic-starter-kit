@@ -27,9 +27,15 @@ The complete operating system, guardrails, rules, and initiative tracking enviro
 
 ## 🚀 How to Use
 
+### Option 1: Apply to an Existing Project
 Navigate to your project directory and run:
 ```bash
 /path/to/agentic-starter-kit/scripts/init-project.sh .
+```
+
+### Option 2: Create a New Project from the GitHub Template
+```bash
+gh repo create my-next-project --template sparrownet/agentic-starter-kit --private --clone
 ```
 
 ---
