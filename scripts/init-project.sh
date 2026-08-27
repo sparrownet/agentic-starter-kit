@@ -33,8 +33,9 @@ safe_copy() {
   cp "$src" "$dest"
 }
 
-# Copy AGENTS.md, rules, docs dashboard, templates, and skills safely
+# Copy AGENTS.md, CLAUDE.md, rules, docs dashboard, templates, and skills safely
 safe_copy "$SCRIPT_DIR/AGENTS.md" "$TARGET_DIR/AGENTS.md"
+safe_copy "$SCRIPT_DIR/CLAUDE.md" "$TARGET_DIR/CLAUDE.md"
 
 for rule in "$SCRIPT_DIR/.agents/rules/"*.md; do
   [ -f "$rule" ] && safe_copy "$rule" "$TARGET_DIR/.agents/rules/$(basename "$rule")"
@@ -51,10 +52,11 @@ safe_copy "$SCRIPT_DIR/skills/agentic-sdlc/SKILL.md" "$TARGET_DIR/skills/agentic
 echo ""
 echo "✅ Agentic SDLC files successfully installed!"
 echo "📁 Structure:"
-echo "   - $TARGET_DIR/AGENTS.md"
-echo "   - $TARGET_DIR/.agents/rules/ (3 rules)"
+echo "   - $TARGET_DIR/AGENTS.md (Google Antigravity entrypoint)"
+echo "   - $TARGET_DIR/CLAUDE.md (Claude Code entrypoint)"
+echo "   - $TARGET_DIR/.agents/rules/ (3 universal SDLC rules)"
 echo "   - $TARGET_DIR/docs/INITIATIVES.md"
 echo "   - $TARGET_DIR/docs/templates/ (PRD & Execution Plan templates)"
 echo "   - $TARGET_DIR/skills/agentic-sdlc/SKILL.md"
 echo ""
-echo "🎉 You can now start pair-programming with Antigravity!"
+echo "🎉 You can now start pair-programming with Antigravity or Claude Code!"

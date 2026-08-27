@@ -6,6 +6,7 @@
 
 # Mandatory Agent Directives & Rules Security Boundary
 /AGENTS.md              @your-org/security-reviewers @your-org/core-maintainers
+/CLAUDE.md              @your-org/security-reviewers @your-org/core-maintainers
 /.agents/               @your-org/security-reviewers @your-org/core-maintainers
 /.agents/rules/         @your-org/security-reviewers @your-org/core-maintainers
 /skills/                @your-org/security-reviewers @your-org/core-maintainers

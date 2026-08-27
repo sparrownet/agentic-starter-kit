@@ -2,9 +2,10 @@
 
 # 🤖 Agentic SDLC Starter Kit
 
-**Enterprise-grade SDLC operating system, guardrail framework, and initiative orchestration for AI pair-programming with Google Antigravity.**
+**Enterprise-grade SDLC operating system, guardrail framework, and initiative orchestration for AI pair-programming with Google Antigravity & Anthropic Claude Code.**
 
 [![Google Antigravity Ready](https://img.shields.io/badge/Google%20Antigravity-Ready-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://antigravity.google)
+[![Claude Code Compatible](https://img.shields.io/badge/Claude%20Code-Compatible-D97706?style=for-the-badge&logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code)
 [![Agentic SDLC Protocol](https://img.shields.io/badge/Agentic%20SDLC-Protocol%20v1.0-6366F1?style=for-the-badge&logo=codewars&logoColor=white)](#-the-agentic-sdlc-lifecycle)
 [![Zero Dependency Drift](https://img.shields.io/badge/Zero--Drift-Strict%20Guardrails-EC4899?style=for-the-badge)](#-core-guardrails-enforced)
 [![Security Hardened](https://img.shields.io/badge/Security-Secret%20Safety-059669?style=for-the-badge&logo=shieldsdotio&logoColor=white)](#-security--governance)
@@ -29,7 +30,7 @@
 
 Standard AI coding assistants often produce uncontrolled scope creep, monolithic untracked commits, unauthorized dependency installations, and broken builds.
 
-The **Agentic SDLC Starter Kit** provides a battle-tested operational framework that turns Google Antigravity into a disciplined engineering team member. It establishes transparent communication protocols, mandatory initiative tracking, isolated Git branches, automated test harnesses, and strict review gates.
+The **Agentic SDLC Starter Kit** provides a battle-tested operational framework that turns AI coding agents into disciplined engineering team members. It establishes transparent communication protocols, mandatory initiative tracking, isolated Git branches, automated test harnesses, and strict review gates.
 
 ---
 
@@ -40,7 +41,7 @@ The **Agentic SDLC Starter Kit** provides a battle-tested operational framework 
 - 📦 **Zero-Drift Dependency Policy:** No `npm install`, `pip install`, or system packages are installed autonomously. All external additions require explicit trade-off justification and user approval.
 - 📋 **Dual-Blueprint Planning (PRD + Execution Plan):** Every initiative is tracked in a central dashboard (`docs/INITIATIVES.md`) and requires both a Product Requirements Document (`PRD.md`) and a step-by-step Technical Execution Plan (`EXECUTION_PLAN.md`).
 - 🌿 **Disciplined Git Initiative Branching:** Work is isolated in dedicated long-lived initiative branches (`feature/initiative-xx-...`) with atomic Conventional Commits and co-located unit tests.
-- 🤖 **Specialist Subagent Delegation:** Out-of-the-box delegation patterns for Backend/Core, Frontend/UI, Architectural Review, and QA Verification agents.
+- 🤖 **Universal Subagent Delegation:** Out-of-the-box delegation patterns for Backend/Core, Frontend/UI, Architectural Review, and QA Verification agents across Antigravity and Claude Code.
 - ⚡ **1-Command Zero-Friction Setup:** Scaffold any new or existing repository with safe, non-destructive installer backups.
 
 ---
@@ -70,7 +71,8 @@ flowchart TD
 .
 ├── .github/
 │   └── CODEOWNERS                     # Protects agent instructions from PR tampering
-├── AGENTS.md                          # Global operating rules & transparency directives
+├── AGENTS.md                          # Primary operating rules & transparency directives
+├── CLAUDE.md                          # Claude Code entrypoint (zero-drift pointer to AGENTS.md)
 ├── .agents/
 │   └── rules/
 │       ├── git_branch_pr_workflow.md  # Mandatory Git branching & PR protocol
