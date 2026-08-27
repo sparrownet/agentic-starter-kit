@@ -18,7 +18,9 @@
 ## 3. Mandatory Session Initialization & Initiative Workflow Rule
 1. **Rule Discovery First:** At the beginning of EVERY new session or user task, ALWAYS inspect `.agents/rules/` first (`git_branch_pr_workflow.md`, `initiative_tracking.md`, `subagent_delegation.md`, `db_environment_isolation.md`).
 2. **Initiative & Branching Protocol Enforcement:** Before implementing any feature or task:
-   - Create/register the initiative in `docs/INITIATIVES.md` and create `docs/INITIATIVE-XX-NAME/PRD.md`.
+   - Create/register the initiative in `docs/INITIATIVES.md`.
+   - Create BOTH `docs/INITIATIVE-XX-NAME/PRD.md` (Product Requirements & Architecture) AND `docs/INITIATIVE-XX-NAME/EXECUTION_PLAN.md` (Step-by-step Technical Plan & Real-time Task Checklist) directly in the initiative folder before writing code.
+   - Any implementation plan generated during planning phases MUST be saved directly to `docs/INITIATIVE-XX-NAME/EXECUTION_PLAN.md`.
    - Create and switch to a dedicated Git branch (e.g., `feature/initiative-xx-name`).
    - Use specialized subagents where applicable.
    - Make small atomic conventional commits with co-located unit tests.
