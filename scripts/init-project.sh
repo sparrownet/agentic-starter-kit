@@ -24,7 +24,7 @@ cp "$SCRIPT_DIR/skills/agentic-sdlc/SKILL.md" "$TARGET_DIR/skills/agentic-sdlc/S
 echo "✅ Agentic SDLC files successfully installed!"
 echo "📁 Created:"
 echo "   - $TARGET_DIR/AGENTS.md"
-echo "   - $TARGET_DIR/.agents/rules/ (4 rules)"
+echo "   - $TARGET_DIR/.agents/rules/ (3 rules)"
 echo "   - $TARGET_DIR/docs/INITIATIVES.md"
 echo "   - $TARGET_DIR/docs/templates/ (PRD & Execution Plan templates)"
 echo "   - $TARGET_DIR/skills/agentic-sdlc/SKILL.md"

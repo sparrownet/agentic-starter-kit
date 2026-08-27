@@ -8,7 +8,7 @@ This document is the **Single Source of Truth** for tracking all architectural, 
 
 | Initiative ID | Title | Status | Goal & Scope | PRD / Spec Link |
 | :--- | :--- | :---: | :--- | :--- |
-| **`INITIATIVE-01-CORE-FOUNDATION`** | **Core Foundation & Architecture** | 📝 **`In Definition`** | Scaffold project repository, configure database layer, and set up test harness. | [`docs/INITIATIVE-01-CORE-FOUNDATION/`](./INITIATIVE-01-CORE-FOUNDATION) |
+| **`INITIATIVE-01-CORE-FOUNDATION`** | **Core Foundation & Architecture** | 📝 **`In Definition`** | Scaffold project structure, establish core patterns, and configure automated test harness. | [`docs/INITIATIVE-01-CORE-FOUNDATION/`](./INITIATIVE-01-CORE-FOUNDATION) |
 
 ---
 
