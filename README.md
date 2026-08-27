@@ -27,26 +27,10 @@ The complete operating system, guardrails, rules, and initiative tracking enviro
 
 ## 🚀 How to Use
 
-### Method 1: Use with Any New / Existing Project (1-Line CLI)
-Navigate to your new project and run:
+Navigate to your project directory and run:
 ```bash
 /path/to/agentic-starter-kit/scripts/init-project.sh .
 ```
-
-### Method 2: Create a GitHub Template Repository
-1. Push this folder to a new GitHub repository named `agentic-starter-kit` (or `agentic-template`):
-   ```bash
-   cd templates/agentic-starter-kit
-   git init
-   git add .
-   git commit -m "feat: initial agentic starter kit"
-   gh repo create sparrownet/agentic-template --public --source=. --push
-   ```
-2. In GitHub repository settings, check **"Template repository"**.
-3. Create future projects instantly with:
-   ```bash
-   gh repo create my-next-project --template sparrownet/agentic-template --private --clone
-   ```
 
 ---
 
