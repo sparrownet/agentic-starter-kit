@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 Agentic SDLC Starter Kit
+<img width="2043" height="770" alt="Agentic SDLC Pipeline Hub" src="https://github.com/user-attachments/assets/b31b3f6b-9b5d-4215-8ea2-c447c2207b4e" />
 
 **Enterprise-grade SDLC operating system, guardrail framework, and initiative orchestration for AI pair-programming with Google Antigravity & Anthropic Claude Code.**
 
